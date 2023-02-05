@@ -16,21 +16,31 @@ $.ajax({
         }).catch(function(error) {
         console.error(error);
         });
-      
-      function updateCurrentWeather(data) {
+
+   
+    function updateCurrentWeather(data) {
         const city = data.city.name;
         //console.log(city);
         const date = new Date();
-        //console.log(date);
+        var formattedDate = moment().format("D/M/YYYY");
+        //console.log(formattedDate);
         const icon = data.list[0].weather[0].icon;
         //console.log(icon);
         const temperature = data.list[0].main.temp;
+        const temp = Math.round(temperature - 273.15);
         //console.log(temperature);
         const humidity = data.list[0].main.humidity;
         //console.log(humidity)
         const windSpeed = data.list[0].wind.speed;
         //console.log(windSpeed)
       
-        }
+        $("#city").text(city);
+        $("#date").text(`(${formattedDate})`);
+        $("#icon").text(icon);
+        $("#temp").text(`Temp: ${temp} °C`);
+        $("#humidity").text(`Humidity: ${humidity}%`);
+        $("#wind").text(`Wind: ${windSpeed} KPH`);
+
+    }
 
       
