@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!--<link rel="stylesheet" href="css/reset.css" /> -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <title>Weather Dashboard</title>
+</head>
+
+<body>
+  <header class="container-fluid text-center text-white bg-dark p-2 weather-header">
+    <h1>Weather Dashboard</h1>
+  </header>
+
+  <!-- max-width for ultra wide resolutions -->
+  <div class="container-fluid" style="max-width: 1400px">
+    <div class="row">
+      <aside class="col-lg-3 pb-3 mt-3">
+        <h2 id="form-heading" class="mt-1 h3 form-label">
+          Search for a City:
+        </h2>
+        <form id="search-form" class="form">
+          <div class="form-inline form-group">
+            <div class="input-group">
+              <input class="form-input weather-search" type="text" id="search-input" placeholder="London"
+                aria-labelledby="form-heading" aria-controls="today forecast" />
+              <div class="input-group-append">
+                <button type="submit" class="btn search-button btn-block" id="search-button" aria-label="submit search">
+                  Search
+                </button>
+                <hr class="hr weather-hr" />
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="list-group pl-2" id="history">Berlin</div>
+        <div class="list-group pl-2" id="history">Paris</div>
+        <div class="list-group pl-2" id="history">Edinburgh</div>
+        <div class="list-group pl-2" id="history">Madrid</div>
+        <div class="list-group pl-2" id="history">Birmingham</div>
+        <div class="list-group pl-2" id="history">London</div>
+      </aside>
+
+      <div class="col-lg-9 pb-3">
+        <section id="today" class="today mt-3 p-3" role="region" aria-live="polite">
+          <h1 id="city">London (14/9/2022)</h1>
+          <div id="temp">Temp: 13.63</div>
+          <div id="wind">Wind: 1.7 KPH</div>
+          <div id="humidity">Humidity: 84%</div>
+
+          List of weather symbols sun, rain, snow, storm, cloud, fog, lightning.
+
+          🌦 ☔ ☼ ☀ ☁ ⛄
+        </section>
+        <section id="forecast" class="forecast row mt-3 p-3" role="region" aria-live="polite">
+          <h5 id="form-heading" class="mt-1 form-label">
+            5-Day Forecast
+          </h5>
+          <div class="container">
+            <div class="row justify-content-around">
+              <div class="col-sm-2 forecast-box">
+                <h3 id="date1">15/9/2022</h3>
+                <div id="symbol1" class="symbol">🌦</div>
+                <div id="temp1">Temp: 13.63</div>
+                <div id="wind1">Wind: 1.7 KPH</div>
+                <div id="humidity1">Humidity: 84%</div>
+              </div>
+              <div class="col-sm-2 forecast-box">
+                <h3 id="date2">16/9/2022</h3>
+                <div id="symbol2" class="symbol">☔</div>
+                <div id="temp2">Temp: 13.63</div>
+                <div id="wind2">Wind: 1.7 KPH</div>
+                <div id="humidity2">Humidity: 84%</div>
+              </div>
+              <div class="col-sm-2 forecast-box">
+                <h3 id="date3">17/9/2022</h3>
+                <div id="symbol3" class="symbol">⛄</div>
+                <div id="temp3">Temp: 13.63</div>
+                <div id="wind3">Wind: 1.7 KPH</div>
+                <div id="humidity3">Humidity: 84%</div>
+              </div>
+              <div class="col-sm-2 forecast-box">
+                <h3 id="date4">18/9/2022</h3>
+                <div id="symbol4" class="symbol">☀</div>
+                <div id="temp4">Temp: 13.63</div>
+                <div id="wind4">Wind: 1.7 KPH</div>
+                <div id="humidity4">Humidity: 84%</div>
+              </div>
+              <div class="col-sm-2 forecast-box">
+                <h3 id="date5">19/9/2022</h3>
+                <div id="symbol5" class="symbol">☔</div>
+                <div id="temp5">Temp: 13.63</div>
+                <div id="wind5">Wind: 1.7 KPH</div>
+                <div id="humidity5">Humidity: 84%</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- Moment.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
