@@ -4,6 +4,10 @@ body {
     line-height: 1;
   }
 
+  h3 {
+    font-size: 20px !important;
+  }
+
   .weather-header {
     background-image: linear-gradient(to right, rgba(52,99,188,1), rgba(32,10,76,1));
     font-weight: bold !important;
@@ -56,9 +60,9 @@ body {
   .forecast-box {
     background-color: #2d3e50;
     color: #fff;
-    height: 200px;
+    height: 220px;
     width: 100%;
-    margin: 10px;
+    margin: 10px 0 0 0;
     padding: 10px;
     justify-content: space-between;
   }
