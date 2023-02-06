@@ -23,28 +23,18 @@ $.ajax({
         const city = data.city.name;
         $("#city").text(city);
 
-
         const date = new Date();
         const formattedDate = moment().format("D/M/YYYY");
-        const formattedDate1 = moment(date).add(1, 'days').format("D/M/YYYY");
-        const formattedDate2 = moment(date).add(2, 'days').format("D/M/YYYY");
-        const formattedDate3 = moment(date).add(3, 'days').format("D/M/YYYY");
-        const formattedDate4 = moment(date).add(4, 'days').format("D/M/YYYY");
-        const formattedDate5 = moment(date).add(5, 'days').format("D/M/YYYY");
-
         $("#date").text(`(${formattedDate})`);
-        $("#date1").text(`(${formattedDate1})`);
-        $("#date2").text(`(${formattedDate2})`);
-        $("#date3").text(`(${formattedDate3})`);
-        $("#date4").text(`(${formattedDate4})`);
-        $("#date5").text(`(${formattedDate5})`);
-
 
         for (let i = 0; i < 6; i++) {
-            $(`#icon${[i]}`).text(data.list[i].weather[0].icon);
+            iconUrl = "https://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png";
+            //console.log(iconUrl);
+            $(`#icon${[i]}`).attr("src", iconUrl);
             $(`#humidity${[i]}`).text(`Humidity: ${data.list[i].main.humidity}%`);
             $(`#wind${[i]}`).text(`Wind: ${data.list[i].wind.speed} KPH`);
             $(`#temp${[i]}`).text(`Temp: ${(Math.round(data.list[i].main.temp - 273.15))} °C`);
+            $(`#date${[i]}`).text(`(${moment(date).add(i, 'days').format("D/M/YYYY")})`);
         }
 
     }
