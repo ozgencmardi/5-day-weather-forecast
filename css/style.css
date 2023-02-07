@@ -81,10 +81,10 @@ body {
   .forecast-box {
     background-color: #2d3e50;
     color: #fff;
-    height: 220px;
+    height: 100%;
     width: 100%;
-    margin: 10px 0 0 0;
-    padding: 10px;
+    margin: 10px 5px;
+    padding: 20px;
     justify-content: space-between;
   }
 
