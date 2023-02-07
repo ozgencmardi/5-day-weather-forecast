@@ -1,3 +1,6 @@
+ 
+ 
+ 
         const APIKey = "166a433c57516f51dfab1f7edaed8413";
         const queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=London&appid=" + APIKey;
 
@@ -56,7 +59,7 @@ document.getElementById("search-form").addEventListener("submit", function(event
 
  
     if (inputValue === "") {
-        city = historyDivText;
+        city = "London";
     } else {
         city = inputValue;
     }
