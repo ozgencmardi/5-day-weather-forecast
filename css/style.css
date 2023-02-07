@@ -59,6 +59,7 @@ body {
     border-radius: 5px !important;
     padding: 10px;
     cursor: pointer;
+    text-align: center;
   }
 
   .list-group:hover {
