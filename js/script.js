@@ -1,8 +1,14 @@
- 
- 
- 
+    let storedInputValue = localStorage.getItem("inputValue");
+    $(`#history`).text(storedInputValue);
+
+    if (storedInputValue === "") {
+        city = "London";
+    } else {
+        city = storedInputValue;
+    }
+
         const APIKey = "166a433c57516f51dfab1f7edaed8413";
-        const queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=London&appid=" + APIKey;
+        const queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIKey;
 
 
         $.ajax({
@@ -46,16 +52,8 @@ document.getElementById("search-form").addEventListener("submit", function(event
 
     localStorage.setItem("inputValue", inputValue);
 
-    $("<div>", {
-        class: "list-group pl-2",
-        id: "history"
-    }).appendTo(".container-fluid").appendTo(".row").appendTo("aside");
-
     var storedInputValue = localStorage.getItem("inputValue");
     $(`#history`).text(storedInputValue);
-  
-    var historyDiv = document.getElementById("history");
-    var historyDivText = historyDiv.textContent;
 
  
     if (inputValue === "") {
